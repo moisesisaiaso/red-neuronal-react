@@ -3,9 +3,14 @@ import styless from "../styleP.module.css";
 
 export const Aprender = ({ P, c, T, a, e, wn, biasn }) => {
     let CdosDecimales = Math.round((c + Number.EPSILON) * 100) / 100;
-    let wn1 = Math.round((wn[0] + Number.EPSILON) * 100) / 100;
-    let wn2 = Math.round((wn[1] + Number.EPSILON) * 100) / 100;
-    console.log(wn);
+    const wnRedondear = [];
+    let valor = 0;
+
+    wn.forEach((peso) => {
+        valor = Math.round((peso + Number.EPSILON) * 100) / 100;
+        wnRedondear.push(valor);
+    });
+
     return (
         <div className={styless.card}>
             <h1 className={styless.titulo}>P{P}</h1>
@@ -30,9 +35,7 @@ export const Aprender = ({ P, c, T, a, e, wn, biasn }) => {
             </li>
             <li className={styless.inset}>
                 <b>Peso nuevo: </b>
-                <h3>
-                    Wn({wn1},{wn2})
-                </h3>
+                <h3>Wn({wnRedondear.join(", ")})</h3>
                 <b>Bias nuevo: </b>
                 <h3>BIASn = {biasn} </h3>
             </li>

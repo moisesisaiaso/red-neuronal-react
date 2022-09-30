@@ -8,8 +8,13 @@ import { Link } from "react-router-dom";
 import { Iteracion } from "./Iteracion";
 
 export const Proceso = ({ nPuntos, respuestaArray, Wn, BIASn }) => {
-    let Wn1 = Math.round((Wn[0] + Number.EPSILON) * 100) / 100;
-    let Wn2 = Math.round((Wn[1] + Number.EPSILON) * 100) / 100;
+    const WnRedondear = [];
+    let valor = 0;
+
+    Wn.forEach((peso) => {
+        valor = Math.round((peso + Number.EPSILON) * 100) / 100;
+        WnRedondear.push(valor);
+    });
     console.log(respuestaArray);
     return (
         <>
@@ -80,7 +85,7 @@ export const Proceso = ({ nPuntos, respuestaArray, Wn, BIASn }) => {
                 })}
 
                 {/* Echo */}
-                <Resultado pesosF1={Wn1} pesosF2={Wn2} BiasF={BIASn} />
+                <Resultado pesosF={WnRedondear} BiasF={BIASn} />
             </section>
 
             <Link to="/" id={styless.atras}>

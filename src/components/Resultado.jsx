@@ -1,7 +1,7 @@
 import React from "react";
 import styless from "../styleP.module.css";
 
-export const Resultado = ({ pesosF1, pesosF2, BiasF }) => {
+export const Resultado = ({ pesosF, BiasF }) => {
     return (
         <>
             <section className={styless.respuesta}>
@@ -10,9 +10,7 @@ export const Resultado = ({ pesosF1, pesosF2, BiasF }) => {
                     <div id={styless.cerebros}>🦾🧠🧠🧠🦾</div>
                     <li id={styless.pesos}>
                         <b>PESOS: </b>
-                        <h3>
-                            W({pesosF1}, {pesosF2})
-                        </h3>
+                        <h3>W({pesosF.join(", ")})</h3>
                     </li>
                     <li>
                         <b>BIAS: </b>

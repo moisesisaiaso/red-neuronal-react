@@ -10,8 +10,14 @@ import { Hora } from "./Hora";
 import { useEffect, useState } from "react";
 
 export const Home = ({ Wn, BIASn, totalIteracionI, puntos, nCaracteristicas, W, BIAS }) => {
-    let Wn1 = Math.round((Wn[0] + Number.EPSILON) * 100) / 100;
-    let Wn2 = Math.round((Wn[1] + Number.EPSILON) * 100) / 100;
+    const WnRedondear = [];
+    let valor = 0;
+
+    Wn.forEach((peso) => {
+        valor = Math.round((peso + Number.EPSILON) * 100) / 100;
+        WnRedondear.push(valor);
+    });
+
     //* Fondos
     const [fondoo, setFondoo] = useState(img1);
 
@@ -56,14 +62,14 @@ export const Home = ({ Wn, BIASn, totalIteracionI, puntos, nCaracteristicas, W, 
                             <br />
                             <p>
                                 {/* imprimo pesos y BIAS */}
-                                W({W.join()}) BIAS = {BIAS}
+                                W({W.join(", ")}) BIAS = {BIAS}
                             </p>
                             {/* pesosBias */}
                             <br />
                             <h3 className={styles.title}>ITERACIÓN {totalIteracionI}</h3>
                             {/* Iteración n */}
                             <p>
-                                R = Wn({Wn1}, {Wn2}) | BIASn = {BIASn}
+                                R = Wn({WnRedondear.join(", ")}) | BIASn = {BIASn}
                             </p>
                             {/* resultado */}
                         </div>

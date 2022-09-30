@@ -85,7 +85,11 @@ function App() {
     const ultimaRespuesta = respuestaArray[respuestaArray.length - 1];
 
     const { W: Wn, BIAS: BIASn } = ultimaRespuesta;
-    const totalIteracionF = respuestaArray.length / nPuntos;
+    let totalIteracionF = respuestaArray.length / nPuntos;
+    if (respuestaArray.length % nPuntos != 0) {
+        totalIteracionF += 1;
+    }
+
     const totalIteracionI = Math.round(totalIteracionF); // redondea el numero
 
     return (
