@@ -107,7 +107,14 @@ function App() {
                 />
                 <Route
                     path="/proceso"
-                    element={<Proceso respuestaArray={respuestaArray} Wn={Wn} BIASn={BIASn} />}
+                    element={
+                        <Proceso
+                            nPuntos={nPuntos}
+                            respuestaArray={respuestaArray}
+                            Wn={Wn}
+                            BIASn={BIASn}
+                        />
+                    }
                 />
             </Routes>
         </HashRouter>

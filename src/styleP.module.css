@@ -40,9 +40,8 @@ p.title {
     text-align: center;
 }
 
-.body2 {
-    padding: 15px !important;
-    background-color: #ece8e8;
+header > div {
+    margin-top: 15px;
 }
 
 .card {
@@ -50,7 +49,7 @@ p.title {
     font-family: "Lato", sans-serif !important;
     border-radius: 40px;
     background: #ecf0f3 !important;
-    box-shadow: 8px 8px 10px #cbced1, 6px 6px 10px #ffffff inset;
+    box-shadow: 8px 8px 10px #cbced1, 6px 6px 3px #ffffff inset;
     margin-top: 20px !important;
     margin: 14px;
     font-size: 15px;
@@ -96,12 +95,13 @@ h1 {
 section {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 15px;
 }
 /*Iteranción */
 .iteracion,
 .respuesta {
     margin: 40px 0px 20px 0px;
-    flex: 1 1000px;
+    flex: 1 1025px !important;
 }
 
 .iteracion h1 {
