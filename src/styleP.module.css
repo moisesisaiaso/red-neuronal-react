@@ -23,6 +23,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #ece8e8;
+}
+
 p.title {
     font-size: 3.5rem;
     text-shadow: 2px 2px 3px #cbced1, -2px -2px 3px #ffffff, 2px 2px 3px #cbced1,
@@ -49,7 +53,7 @@ header > div {
     font-family: "Lato", sans-serif !important;
     border-radius: 40px;
     background: #ecf0f3 !important;
-    box-shadow: 8px 8px 10px #cbced1, 6px 6px 3px #ffffff inset;
+    box-shadow: 8px 8px 10px #cbced1, 6px 6px 10px #ffffff inset;
     margin-top: 20px !important;
     margin: 14px;
     font-size: 15px;
